@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: bisque;
   margin: 0;
   padding: 0;
   display: flex;
@@ -14,7 +14,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  max-width: 500px;
+  max-width: 1000px;
   width: 100%;
 }
 
@@ -58,4 +58,37 @@ button:hover {
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f9f9f9;
+}
+
+.copyButton {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.copyButton:hover {
+  background-color: #218838;
+}
+
+.modal-body {
+  max-height: 400px; /* Adjust height as needed */
+  overflow-y: auto;
+}
+
+.copyButton {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.copyButton:hover {
+  background-color: #218838;
 }
