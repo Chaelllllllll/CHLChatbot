@@ -60,7 +60,7 @@
      async function submitForm(event) {
          event.preventDefault();
          const prompt = document.getElementById('json-data').value;
-         const apiUrl = `https://mota-dev.x10.bz/ai?prompt=${encodeURIComponent(prompt)}name=hi`;
+         const apiUrl = `https://mota-dev.x10.bz/ai?prompt=${encodeURIComponent(prompt)}&name=hi`;
          try {
              const response = await fetch(apiUrl);
              if (!response.ok) {
