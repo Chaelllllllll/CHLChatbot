@@ -3,19 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Command Interface</title>
+    <title>SiyatBot</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>AI Command Interface</h1>
+    <div class="container mt-1 p-3">
+        <h1 class="text-center">SiyatBot</h1>
         <form id="aiForm">
-            <label for="prompt">Enter your question or statement:</label>
-            <input type="text" id="prompt" name="prompt" required>
-            <button type="submit">Submit</button>
+            <div class="form-group">
+                <input type="text" id="prompt" name="prompt" class="form-control" placeholder="Enter your question or statement:" required>
+            </div>
+            <button type="submit" class="btn" style="background-color: bisque;">Submit</button>
         </form>
-        <div id="response" class="response"></div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="responseModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="responseModalLabel">Result</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="responseText"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="copyButton" class="btn btn-success" style="display: none;">Copy</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
