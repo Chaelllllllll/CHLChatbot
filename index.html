@@ -3,48 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Example</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        input, button {
-            margin: 10px;
-        }
-        #result {
-            margin-top: 20px;
-        }
-    </style>
+    <title>AI Command Interface</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>API Response Example</h1>
-    <input type="text" id="inputField" placeholder="Type something...">
-    <button onclick="fetchData()">Submit</button>
-    <div id="result"></div>
-
-    <script>
-        async function fetchData() {
-            const input = document.getElementById('inputField').value;
-            const url = 'https://ai1-qg0b.onrender.com/?p=${encodeURIComponent(input)}';
-            
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                
-                document.getElementById('result').innerHTML = `
-                    <p><strong>Result:</strong> ${data.result}</p>
-                    <p><strong>Developer By:</strong> ${data.developer_by}</p>
-                `;
-            } catch (error) {
-                document.getElementById('result').innerHTML = '<p>Error fetching data. Please try again later.</p>';
-            }
-        }
-    </script>
+    <div class="container">
+        <h1>AI Command Interface</h1>
+        <form id="aiForm">
+            <label for="prompt">Enter your question or statement:</label>
+            <input type="text" id="prompt" name="prompt" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="response" class="response"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
