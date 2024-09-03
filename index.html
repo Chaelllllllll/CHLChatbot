@@ -45,7 +45,7 @@
      <form id="json-form" onsubmit="submitForm(event)">
          <div class="row">
             <div class="col-md-12">
-               <textarea id="json-data" class="form-control centered-textarea right-placeholder" placeholder="Type your prompt here.."></textarea>
+                <input id="json-data" type="text" class="form-control right-placeholder" placeholder="Type your prompt here..">
             </div>
          </div>
          <button type="submit" class="btn btn-primary mt-2">Submit</button>
@@ -57,21 +57,24 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
    <script>
-     async function submitForm(event) {
-         event.preventDefault();
-         const prompt = document.getElementById('json-data').value;
-         const apiUrl = `https://mota-dev.x10.bz/ai?prompt=${encodeURIComponent(prompt)}&name=hi`;
-         try {
-             const response = await fetch(apiUrl);
-             if (!response.ok) {
-                 throw new Error('Network response was not ok');
-             }
-             const data = await response.json();
-             document.getElementById('result').innerHTML = data.reply;
-         } catch (error) {
-             document.getElementById('result').innerHTML = 'Error: ' + error.message;
-         }
-     }
-   </script>
+    async function submitForm(event) {
+        event.preventDefault();
+        const prompt = document.getElementById('json-data').value;
+        const apiUrl = `https://ai1-qg0b.onrender.com/?p=${encodeURIComponent(prompt)}`;
+        
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const data = await response.json();
+            document.getElementById('result').innerHTML = data.result;
+        } catch (error) {
+            console.error('Fetch error:', error);
+            document.getElementById('result').innerHTML = 'Error: ' + error.message;
+        }
+    }
+    </script>
+    
 </body>
 </html>
